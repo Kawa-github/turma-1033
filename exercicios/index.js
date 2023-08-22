@@ -2,12 +2,20 @@ let id = 1
 
 class Loja {
     constructor(produto, marca, preco, ativo = true){
+        
+        const precoProd = Number(preco);
+        if(precoProd < 0) {
+            throw new Error("Preço não pode ser negativo.");
+        }
+
         this.id = id++
         this.produto = produto
         this.marca = marca
-        this.preco = preco
+        this.preco = precoProd
         this.ativo = ativo
     }
+
+    
 
     comprarProduto(produto){
         if(typeof produto !== "string"){
@@ -28,7 +36,7 @@ class Loja {
     }
 
     alterarPreco(preco){
-        if(typeof this.preco !== "number"){
+        if(typeof preco !== "number"){
             throw new Error("Preço inválido!")
         }
 
@@ -48,12 +56,12 @@ let produto2 = new Loja("Moletom", "Adidas", 50.99)
 // console.log(produto1)
 // console.log(produto2)
 
-console.log(produto1.comprarProduto("Camiseta"))
+// console.log(produto1.comprarProduto("Camiseta"))
 // console.log(produto1.comprarProduto("Camiseta"))
 
 // console.log(produto2.comprarProduto("Moletom"))
 // console.log(produto2.comprarProduto("Moletom")) 
 
-console.log(produto1.alterarPreco(25))
-// console.log(produto2.alterarPreco(10.50))
+// console.log(produto1.alterarPreco("oi"))
+console.log(produto2.alterarPreco(11.99))
 
