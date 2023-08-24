@@ -78,7 +78,11 @@ class Conta {
 
 const conta1 = new Conta("biruliro", "123.456.789-00", 404, 40028922, "0000001", "senha123admin", "2578/x");
 
-const conta2 = new Conta("biruliro2", "123.456.789-00", 404, 40028922, "0000001", "senha123admin", "2578/x");
+const conta2 = new Conta("biruliro2", "123.456.789-00", 501, 40028922, "0000001", "senha123admin", "2578/x");
+
+console.log(conta1)
+console.log(conta2.pix(conta1, 500))
+console.log(conta1)
 
 console.log(conta1.rg);
 console.log(conta2.rg);
