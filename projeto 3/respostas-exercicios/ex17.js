@@ -43,7 +43,7 @@ class Escola {
     }
   
     ranking() {
-      const rankingOrdenado = this.listaAlunos.slice().sort((a, b) => b.nota - a.nota);
+      const rankingOrdenado = this.listaAlunos.sort((a, b) => b.nota - a.nota);
       return rankingOrdenado;
     }
   }
